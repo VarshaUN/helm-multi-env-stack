@@ -1,0 +1,4 @@
+*.tgz
+charts/app-stack/charts/*.tgz
+.env
+kubeconfig
