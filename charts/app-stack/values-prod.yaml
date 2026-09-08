@@ -25,5 +25,11 @@ postgresql:
       size: 5Gi
   auth:
     username: appuser
-    password: prodpassword
     database: appdb
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
+  volumePermissions:
+    image:
+      registry: docker.io
+      repository: bitnamilegacy/os-shell

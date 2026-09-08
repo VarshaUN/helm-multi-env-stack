@@ -48,10 +48,12 @@ spec:
             httpGet:
               path: /health
               port: 3000
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds | default 10 }}
           readinessProbe:
             httpGet:
               path: /health
               port: 3000
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds | default 10 }}
           {{- with .Values.resources }}
           resources:
             {{- toYaml . | nindent 12 }}

@@ -24,5 +24,11 @@ postgresql:
       enabled: false
   auth:
     username: appuser
-    password: devpassword
     database: appdb
+  image:
+    registry: docker.io
+    repository: bitnamilegacy/postgresql
+  volumePermissions:
+    image:
+      registry: docker.io
+      repository: bitnamilegacy/os-shell

@@ -2,3 +2,4 @@
 charts/app-stack/charts/*.tgz
 .env
 kubeconfig
+charts/app-stack/secrets-*.yaml
