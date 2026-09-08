@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: eso-store-reader
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: eso-secret-reader
+  namespace: vault-mock
+rules:
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: eso-secret-reader-binding
+  namespace: vault-mock
+subjects:
+  - kind: ServiceAccount
+    name: eso-store-reader
+    namespace: default
+roleRef:
+  kind: Role
+  name: eso-secret-reader
+  apiGroup: rbac.authorization.k8s.io
