@@ -1,0 +1,15 @@
+apiVersion: v2
+name: app-stack
+description: Multi-environment microservices deployment framework
+version: 0.1.0
+appVersion: "1.0"
+dependencies:
+  - name: postgresql
+    version: "15.5.x"
+    repository: "https://charts.bitnami.com/bitnami"
+  - name: frontend
+    version: "0.1.0"
+    repository: "file://frontend"
+  - name: backend
+    version: "0.1.0"
+    repository: "file://backend"

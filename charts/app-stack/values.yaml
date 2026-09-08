@@ -1,0 +1,14 @@
+frontend:
+  replicaCount: 1
+
+backend:
+  replicaCount: 1
+
+postgresql:
+  auth:
+    username: appuser
+    password: changeme
+    database: appdb
+  primary:
+    persistence:
+      enabled: false
